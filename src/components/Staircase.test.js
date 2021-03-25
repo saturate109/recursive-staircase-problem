@@ -27,7 +27,9 @@ test('Check test cases', () => {
     steps.forEach((currentStep) => {
       fireEvent.change(input, { target: { value: currentStep.numSteps } });
       fireEvent.click(button);
-      expect(answer).toHaveTextContent(currentStep.answers[setIndex]);
+      expect(answer).toHaveTextContent(
+        currentStep.answers[setIndex].toString()
+      );
     });
   });
 });
